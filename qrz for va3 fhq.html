@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terminal: '#00ff41',
+                        terminal_red: '#ff003c',
+                        terminal_cyan: '#69ABAB',
+                        dark: '#0a0a0a',
+                        carbon: '#171717',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'scanline': 'scanline 8s linear infinite',
+                    },
+                    keyframes: {
+                        scanline: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(1200%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #00ff41; border-radius: 4px; }
+        .scanline-effect {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: rgba(0, 255, 65, 0.15);
+            z-index: 50;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-black py-4 px-2 md:py-10 md:px-4">
+
+<div class="bg-dark text-white font-mono max-w-5xl mx-auto border-2 border-terminal shadow-[0_0_40px_rgba(0,255,65,0.1)] overflow-hidden relative">
+    
+    <div class="scanline-effect animate-scanline"></div>
+
+    <header class="bg-carbon p-6 md:p-12 text-center border-b-2 border-terminal relative">
+        <div class="hidden sm:block absolute top-2 left-4 text-[9px] text-terminal opacity-40">LOC: 45.3° N, 75.9° W</div>
+        <div class="hidden sm:block absolute top-2 right-4 text-[9px] text-terminal opacity-40 uppercase font-bold">Node: VA3FHQ-7</div>
+        
+        <h1 class="text-5xl sm:text-7xl md:text-9xl font-black text-terminal tracking-tighter drop-shadow-[0_0_15px_#00ff41] animate-pulse-slow">
+            VA3FHQ
+        </h1>
+        
+        <div class="mt-4 inline-block border-y border-terminal py-2 px-4 md:px-6 text-sm sm:text-lg md:text-2xl tracking-[0.2em] md:tracking-[0.3em] uppercase font-bold bg-terminal/5">
+            Geek Mechanical
+        </div>
+        
+        <div class="mt-6 md:mt-8 flex flex-wrap justify-center gap-2 md:gap-8 text-[9px] md:text-xs text-terminal font-bold uppercase">
+            <span class="flex items-center"><span class="text-white mr-1">[</span>ONTARIO, CANADA<span class="text-white ml-1">]</span></span>
+            <span class="flex items-center"><span class="text-white mr-1">[</span>FN25<span class="text-white ml-1">]</span></span>
+            <span class="flex items-center"><span class="text-white mr-1">[</span>ITU 4 / CQ 4<span class="text-white ml-1">]</span></span>
+        </div>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3">
+        
+        <div class="md:col-span-2 border-b md:border-b-0 md:border-r border-terminal/30">
+            
+            <section class="p-5 md:p-10 border-b border-terminal/30 bg-gradient-to-br from-dark to-carbon/40">
+                <h2 class="text-terminal text-lg md:text-xl mb-4 md:mb-6 flex items-center font-bold uppercase">
+                    <span class="mr-3 text-sm opacity-50 underline">01</span> Transmission History
+                </h2>
+                <div class="text-gray-300 leading-relaxed text-xs md:text-sm space-y-4">
+                    <p>
+                        Operating from <span class="text-white font-bold">Canada's Capital City</span>, my journey into amateur radio began with a deep curiosity for how things work. I initially secured my 
+                        <span class="text-terminal font-bold italic">Basic License with Honours</span>, granting me access to the full radio spectrum. 
+                    </p>
+                    <p>
+                        Driven by a desire for technical mastery, I earned my <span class="text-white border-b border-terminal">Advanced License</span> in less than a year. Now diving into digital modes and antenna building, utilizing 3D printing and my mechanical background to share the journey.
+                    </p>
+                    <p class="italic text-terminal opacity-80 text-[10px] md:text-xs text-center border-y border-terminal/10 py-3">
+                        "The real license is the one you earn every time you fix a circuit or decode a signal from the noise. Mastery is a moving target. Never stop learning."
+                    </p>
+                </div>
+            </section>
+
+
+
+            <!-- Gallery photos -->
+
+            <section class="p-5 md:p-10 border-b border-terminal/30 bg-black/20">
+                <h2 class="text-terminal text-lg md:text-xl mb-6 flex items-center font-bold uppercase">
+                    <span class="mr-3 text-sm opacity-50 underline">02</span> My Gallery
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
+                    <a href="#photo1" class="border border-terminal/30 p-1 hover:border-terminal transition-all group relative">
+                        <img src="./MEDIA/spring-hunting.JPG" class="w-full grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100">
+                        <div class="absolute bottom-1 right-1 bg-terminal text-black text-[7px] px-1 font-bold">SPRING</div>
+                    </a>
+                    <a href="#photo2" class="border border-terminal/30 p-1 hover:border-terminal transition-all group relative">
+                        <img src="./MEDIA/autumn-hunting.jpg" class="w-full grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100">
+                        <div class="absolute bottom-1 right-1 bg-terminal text-black text-[7px] px-1 font-bold">AUTUMN</div>
+                    </a>
+                    <a href="#photo3" class="border border-terminal/30 p-1 hover:border-terminal transition-all group relative">
+                        <img src="./MEDIA/summer-hunting.JPG" class="w-full grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100">
+                        <div class="absolute bottom-1 right-1 bg-terminal text-black text-[7px] px-1 font-bold">SUMMER</div>
+                    </a>
+                </div>
+
+                <div id="photo1" class="fixed inset-0 z-[100] hidden target:flex items-center justify-center bg-black/95 p-4">
+                    <a href="#" class="absolute inset-0"></a>
+                    <div class="relative border-2 border-terminal bg-dark p-1 max-w-full md:max-w-3xl">
+                        <a href="#" class="absolute -top-10 right-0 text-terminal font-bold">[ X ] CLOSE</a>
+                        <img src="./MEDIA/spring-hunting.JPG" class="max-h-[80vh]">
+                    </div>
+                </div>
+                <div id="photo2" class="fixed inset-0 z-[100] hidden target:flex items-center justify-center bg-black/95 p-4">
+                    <a href="#" class="absolute inset-0"></a>
+                    <div class="relative border-2 border-terminal bg-dark p-1 max-w-full md:max-w-3xl">
+                        <a href="#" class="absolute -top-10 right-0 text-terminal font-bold">[ X ] CLOSE</a>
+                        <img src="./MEDIA/autumn-hunting.jpg" class="max-h-[80vh]">
+                    </div>
+                </div>
+                <div id="photo3" class="fixed inset-0 z-[100] hidden target:flex items-center justify-center bg-black/95 p-4">
+                    <a href="#" class="absolute inset-0"></a>
+                    <div class="relative border-2 border-terminal bg-dark p-1 max-w-full md:max-w-3xl">
+                        <a href="#" class="absolute -top-10 right-0 text-terminal font-bold">[ X ] CLOSE</a>
+                        <img src="./MEDIA/summer-hunting.JPG" class="max-h-[80vh]">
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- Achievements photos -->
+
+            <section class="p-5 md:p-10 border-b border-terminal/30">
+                <h2 class="text-terminal text-lg md:text-xl mb-6 flex items-center font-bold uppercase">
+                    <span class="mr-3 text-sm opacity-50 underline">03</span> Achievements &amp; Clubs
+                </h2>
+                <div class="space-y-3">
+                    <div class="border border-terminal/40 rounded bg-carbon/20">
+                        <button onclick="toggleAward('award-pota')" class="w-full text-left p-4 hover:bg-terminal/5 flex justify-between items-center">
+                            <span class="tracking-widest text-xs md:text-sm font-bold uppercase">Field Ops</span>
+                            <span id="icon-award-pota" class="text-terminal font-bold text-xl">+</span>
+                        </button>
+                        <div id="award-pota" class="hidden p-4 text-[11px] md:text-sm bg-black/60 text-gray-400 border-t border-terminal/20">
+                            <ul class="space-y-2 mb-5">
+                                <li><span class="text-terminal">>></span> <strong>POTA:</strong>
+                                    <ul class="display-block ml-5">
+                                        <li class="pt-2"><span class="text-terminal">~</span><span class="text-terminal_red"> (Hunting)</span>  Summer, Spring, Autumn, Summer, Winter Award, Bronze, Silver, Gold, Platinum, Diamond, Sapphire Arizona Agave, Enrubio, Dx Hunter, New Years Award</li>
+
+                                        <li class="pt-2"><span class="text-terminal">~</span><span class="text-terminal_cyan"> (Activating)</span> Spring Award</li>
+                                        
+                                    </ul>
+                                </li>
+                                <li><span class="text-terminal">>></span> <strong>BOTA (Bunkers On The Air):</strong> My Local BOTA the Diefenbunker.</li>
+                                <li><span class="text-terminal">>></span> <strong>WWFF (World Wide Flora 
+                                &amp; Fona):</strong> My Local WWFF spote the Diefenbunker.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="border border-terminal/40 rounded bg-carbon/20">
+                        <button onclick="toggleAward('award-eng')" class="w-full text-left p-4 hover:bg-terminal/5 flex justify-between items-center">
+                            <span class="tracking-widest text-xs md:text-sm font-bold uppercase">My Clubs</span>
+                            <span id="icon-award-eng" class="text-terminal font-bold text-xl">+</span>
+                        </button>
+                        <div id="award-eng" class="hidden p-4 text-[11px] md:text-sm bg-black/60 text-gray-400 border-t border-terminal/20">
+                            <ul class="space-y-2">
+                                <li><span class="text-terminal">>></span> <strong>OARC:</strong> Ottawa Amature Radio Clube</li>
+                                <li><span class="text-terminal">>></span> <strong>OVMRC:</strong> Ottawa Valley Mobile Radio Club</li>
+                                <li><span class="text-terminal">>></span> <strong>VE3CWM:</strong> The Ottawa Diefenbunker</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+
+            <!-- Buro Event -->
+            <section class="p-5 md:p-10 border-b border-terminal/30 bg-black/40 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-[#ff003c]/5 blur-3xl pointer-events-none"></div>
+
+                <h2 class="text-terminal text-lg md:text-xl mb-6 flex items-center font-bold uppercase">
+                    <span class="mr-3 text-sm opacity-50 underline">04</span> QSL_ROUTING_PROTOCOL
+                </h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    
+                    <div class="border border-terminal/20 bg-carbon/40 p-5 relative">
+                        <div class="absolute -top-2 left-3 bg-dark px-2 text-terminal text-[9px] font-black tracking-widest uppercase">
+                            Incoming_Buro_Address
+                        </div>
+                        <div class="font-mono text-xs md:text-sm text-white leading-relaxed">
+                            <p class="font-bold text-terminal mb-2">VA3/VE3 Incoming QSL Bureau</p>
+                            <p>PO Box 46, RPO Streetsville</p>
+                            <p>Mississauga, Ontario L5M 2B7</p>
+                            <p class="tracking-[0.3em] font-bold">CANADA</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-terminal/10">
+                            <div class="flex items-center space-x-2 text-[10px] text-gray-500 uppercase">
+                                <span class="w-2 h-2 bg-terminal/30 rounded-full"></span>
+                                <span>Status: Active Exchange</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border border-[#ff003c]/30 bg-[#ff003c]/5 p-5 relative">
+                        <div class="absolute -top-2 left-3 bg-dark px-2 text-[#ff003c] text-[9px] font-black tracking-widest uppercase">
+                            Dispatch_Instructions
+                        </div>
+                        
+                        <ul class="space-y-4 text-[11px] md:text-xs text-gray-300">
+                            <li class="flex items-start">
+                                <span class="text-[#ff003c] mr-3 font-bold mt-1">01</span>
+                                <span>Use the <span class="text-white font-bold uppercase">VA3/VE3 Bureau</span> address provided to the left.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#ff003c] mr-3 font-bold mt-1">02</span>
+                                <span>Ensure my callsign <span class="text-terminal font-bold underline">VA3FHQ</span> is clearly printed on the card.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#ff003c] mr-3 font-bold mt-1">03</span>
+                                <span>Include <span class="text-white font-bold">return postage</span> if sending direct for high-priority turnaround.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#ff003c] mr-3 font-bold mt-1">04</span>
+                                <span class="italic opacity-80 uppercase text-[10px]">Note: Bureau transit times vary. Please be patient while the gears turn.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+
+        <div class="p-6 md:p-8 bg-carbon/30">
+            <h2 class="text-terminal text-lg mb-6 font-bold tracking-widest uppercase border-b-2 border-terminal pb-2">Connect</h2>
+            
+            <div class="space-y-3">
+                <a href="https://www.youtube.com/@geekmechanical" target="_blank" class="block w-full py-4 border border-terminal text-center text-terminal hover:bg-terminal hover:text-black font-bold transition-all text-[10px] tracking-[0.2em] shadow-[0_0_15px_rgba(0,255,65,0.1)]">
+                    YOUTUBE: GEEK MECHANICAL
+                </a>
+                <a href="#" class="block w-full py-4 border border-terminal text-center text-terminal hover:bg-terminal hover:text-black font-bold transition-all text-[10px] tracking-[0.2em]">
+                    INSTAGRAM / BUILDS
+                </a>
+            </div>
+
+            <div class="mt-10 bg-black/40 p-4 border-l-2 border-terminal">
+                <h2 class="text-terminal text-[13px] mb-6 uppercase tracking-widest font-bold underline italic text-center">My Ham Shake</h2>
+                
+                <div class="space-y-8 text-[10px] md:text-[11px]">  
+                    <div>
+                        <span class="text-gray-500 block uppercase text-[8px] mb-2 font-black tracking-widest border-b border-terminal/10">Radio_Hardware</span>
+                        <div class="space-y-2">
+                            <div>
+                                <span class="text-gray-400 block text-[9px]">HF_STATION</span>
+                                <span class="text-white font-bold italic">ICOM IC-7300 / IC-7100</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 block text-[9px]">VHF_UHF_MOBILE</span>
+                                <span class="text-white font-bold italic">RETEVIS RT-95 / VGC N76</span>
+                            </div>
+                        </div>
+                    </div>
+
+                <div>
+                    <span class="text-gray-500 block uppercase text-[8px] mb-2 font-black tracking-widest border-b border-terminal/10">Antenna_Array (QTH)</span>
+                    <ul class="space-y-3 text-white">
+                        <li class="flex flex-col">
+                            <span class="font-bold italic">DX Commander Signature 9</span>
+                            <span class="text-terminal text-[9px] font-bold">[80m — 6m Vertical]</span>
+                        </li>
+                        <li class="flex flex-col">
+                            <span class="font-bold italic">CHA EMCOMM II V2</span>
+                            <span class="text-terminal text-[9px] font-bold">[160m — 6m Wire]</span>
+                        </li>
+                        <li class="flex flex-col">
+                            <span class="font-bold italic">DIY Arrow J-Pole</span>
+                            <span class="text-terminal text-[9px] font-bold">[2m / 70cm Dual Band]</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <span class="text-gray-500 block uppercase text-[8px] mb-2 font-black tracking-widest border-b border-terminal/10">Field_Deployment (POTA)</span>
+                    <ul class="space-y-3 text-white">
+                        <li class="flex flex-col">
+                            <span class="font-bold italic">JPC-12 Portable</span>
+                            <span class="text-terminal text-[9px] font-bold">[40m — 6m Ground Plane]</span>
+                        </li>
+                        <li class="flex flex-col">
+                            <span class="font-bold italic">DIY Endfed Half-Wave</span>
+                            <span class="text-terminal text-[9px] font-bold">[40m — 6m Resonance]</span>
+                        </li>
+                        <li class="flex flex-col">
+                            <span class="font-bold italic">1/4 Wave Mag-Mount</span>
+                            <span class="text-terminal text-[9px] font-bold">[VHF / UHF Mobile]</span>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10">
+                <div class="bg-terminal/10 border border-terminal/30 p-4 rounded text-center">
+                    <div class="text-terminal font-bold text-[10px] mb-3 tracking-widest">SYSTEM_QSL_STATUS</div>
+                    <div class="grid grid-cols-2 gap-2 text-[9px] font-bold">
+                        <div class="bg-terminal text-black py-1">LoTW: OK</div>
+                        <div class="bg-terminal text-black py-1">QRZ: OK</div>
+                        <div class="bg-terminal text-black py-1">BURO: OK</div>
+                        <div class="bg-terminal text-black py-1">eQSL: OK</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-carbon p-6 border-t-2 border-terminal text-center">
+        <div class="text-[8px] md:text-[10px] text-terminal/60 uppercase tracking-[0.2em] md:tracking-[0.4em] font-bold">
+            73 DE VA3FHQ // GEEK MECHANICAL // 2026_OUT
+        </div>
+    </footer>
+</div>
+
+<script>
+    function toggleAward(id) {
+        const content = document.getElementById(id);
+        const icon = document.getElementById('icon-' + id);
+        if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
+            icon.innerText = '−';
+            icon.classList.add('text-white');
+        } else {
+            content.classList.add('hidden');
+            icon.innerText = '+';
+            icon.classList.remove('text-white');
+        }
+    }
+</script>
+
+</body>
+</html>
